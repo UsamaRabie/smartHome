@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <!--Custom CSS-->
-    <link rel="stylesheet" href="style.css">
-  
-    <title>Control Device</title>
-  </head>
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Control Device</title>
+</head>
+
 <body>
-  
+
 
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <a class="navbar-brand" href="#">Smart Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item ">
@@ -29,7 +32,7 @@
         <li class="nav-item">
           <a class="nav-link" href="process.html">Process </a>
         </li>
-        
+
         <li class="nav-item ">
           <a class="nav-link " href="about.html">About Us</a>
         </li>
@@ -38,32 +41,57 @@
           <a class="nav-link " href="control.html">Control device</a>
         </li>
       </ul>
-    
+
     </div>
   </nav>
 
   <div>
     <div class="text-center">
-      <form action="" class="mt-5 p-5 bg-success" >
-        <span>Guess a number from 0 to 50</span> <input placeholder="enter number"  class="bg-warning" type="number" id="number">
+      <form action="" class="mt-5 p-5 bg-success">
+        <span>Guess a number from 0 to 50</span> <input placeholder="enter number" class="bg-warning" type="number"
+          id="number">
         <button type="submit" id="submitButton" class="btn btn-primary">submit</button>
       </form>
     </div>
-    <h5 class="text-center  bg-warning p-5" id="playGame" ></h5>
-  <h5 class="text-center mt-3" id="rightNumber"></h5>
-    </div>
-    
+    <h5 class="text-center  bg-warning p-5" id="playGame"></h5>
+    <h5 class="text-center mt-3" id="rightNumber"></h5>
+  </div>
 
 
 
 
 
-  
+
+
 
   <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/tether/dist/js/tether.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="/node_modules/tether/dist/js/tether.min.js"></script>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="playGame.js"></script>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevents the default form submission
+    });
+
+    function OPEN() {
+      event.preventDefault();
+      fetch('/open', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    function CLOSE() {
+      event.preventDefault();
+      fetch('/close', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+
 </body>
+
 </html>

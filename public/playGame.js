@@ -38,9 +38,9 @@ form.addEventListener('submit', (event) => {
       
       <img src="media/circuit.PNG" alt="circuit"  class="img-fluid col-sm-12 col-md-5  "/>
       <div class="mt-5">
-      <form>
-      <button type="submit"  class="btn btn-success"> ON</button>
-      <button type="submit" class="btn btn-danger">OFF</button>
+      <form id="myForm">
+      <button type="submit"  class="btn btn-success" onclick=OPEN()> ON</button>
+      <button type="submit" class="btn btn-danger" onclick=CLOSE()>OFF</button>
       </form>
       </div>
     `;
