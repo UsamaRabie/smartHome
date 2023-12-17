@@ -19,6 +19,8 @@ function generateRandomNumber() {
 let count = 6;
 
 let randomNumber = generateRandomNumber()
+console.log(randomNumber)
+
 // Add an event listener to the form submit button
 form.addEventListener('submit', (event) => {
   // Prevent the default form submission behavior
@@ -34,9 +36,9 @@ form.addEventListener('submit', (event) => {
   if (Number(randomNumber) === Number(number)) {
     // Print a congratulatory message with the correct number
     playGame.innerHTML = `
-      <h1 class="mb-5">Congratulations Right number ${number}!</h1>
+      <h4 class="mb-5">Congratulations Right number ${number}!</h4>
       
-      <img src="media/circuit.PNG" alt="circuit"  class="img-fluid col-sm-12 col-md-5  "/>
+      <img src="media/circuit.PNG" alt="circuit"  class="img-fluid  "/>
       <div class="mt-5">
       <form id="myForm">
       <button type="submit"  class="btn btn-success" onclick=OPEN()> ON</button>
