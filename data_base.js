@@ -62,7 +62,7 @@ module.exports = { State};*/
 
 const { MongoClient, ObjectId } = require('./node_modules/mongodb');
 
-const mongoURI = 'mongodb://localhost:27017';
+const mongoURI = 'mongodb://127.0.0.1:27017';
 const dbName = 'motorDB';
 
 async function connectToDatabase() {

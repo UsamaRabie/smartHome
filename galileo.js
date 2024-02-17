@@ -6,15 +6,12 @@ const{ connectToDatabase, insertState } = require('./data_base');
 
 
 const app = express();
-
 const machine_ip = "";
 const hostname = machine_ip || "0.0.0.0";
 console.log(hostname);
 const port = 3000;
 
-
 app.use(morgan("dev"));
-
 
 app.post('/open', (req, res) => {
     //open_SERVO();
@@ -29,10 +26,6 @@ app.post('/close', (req, res) => {
     console.log('DOOR closed from mobile\n');
     res.json({ message: 'DOOR closed' });
 });
-
-
-
-
 
 app.listen(80, "0.0.0.0", () => {
     console.log('Express working on http://${hostname}/  \n');
